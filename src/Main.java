@@ -1,8 +1,22 @@
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Hello world!");
+        // Comentário - 1 Linha
+        System.out.println("Comentário de Uma Linha!");
 
-        System.out.println("Meu Primeiro Programa JAVA!!");
+
+        /*
+        *
+        * Comentário - Bloco de Linha
+        *
+        * */
+        System.out.println("Comentário de Bloco de Linhas!!");
+
+
+        /**
+         * Comentário - JAVA DOC
+         */
+        System.out.println("Comentário Java DOC!!!");
+
     }
 }
