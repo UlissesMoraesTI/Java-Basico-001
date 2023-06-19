@@ -15,6 +15,14 @@ public class Comentarios {
 
         /**
          * Comentário - JAVA DOC
+         *
+         * Essa classe apresenta as formas de comentários
+         *
+         * @author Ulisses Moraes Dos Reis Souza
+         * @since version 1.0
+         * @see Existem 3(Três) tipos de comentários
+         * @param args Parâmetros esperadaos pela classe
+         *
          */
         System.out.println("Comentário Java DOC!!!");
 
