@@ -1,4 +1,4 @@
-public class ComandConcat {
+public class ComandStringConcat {
 
     public static void main(String[] args) {
         String s = "Bom dia";

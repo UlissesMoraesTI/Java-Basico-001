@@ -1,4 +1,4 @@
-public class ComandstartWith {
+public class ComandStringStartWith {
     public static void main(String[] args) {
         String s = "Boa Tarde";
         System.out.println(s.startsWith("boa")); // Resultado False - COMEÇA COM?

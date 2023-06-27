@@ -1,5 +1,4 @@
-public class ComandtoUpperCase {
-
+public class ComandStringToUpperCase {
     public static void main(String[] args) {
         String s = "Boa tarde!";
         s = s.toUpperCase();
