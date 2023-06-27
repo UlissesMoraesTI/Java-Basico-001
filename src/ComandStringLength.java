@@ -9,5 +9,7 @@ public class ComandStringLength {
         System.out.println(s.toLowerCase().startsWith("boa"));
         System.out.println(s.toUpperCase().endsWith("TARDE"));
         System.out.println(s.length());
+        System.out.println(s.toLowerCase().equals("boa tarde"));
+        System.out.println(s.equalsIgnoreCase("boa tarde"));
     }
 }
