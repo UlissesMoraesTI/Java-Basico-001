@@ -4,10 +4,14 @@ import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
 import br.ce.wcaquino.utils.DataUtils;
+import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Date;
+
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 public class LocacaoService {
 
@@ -40,6 +44,16 @@ public class LocacaoService {
         Locacao locacao = service.alugarFilme(usuario, filme);
 
         //verificação
-        Assert.assertTrue(locacao.getValor() == 5.0);
+        Assert.assertTrue(locacao.getValor() == 5.0); // forma inicial
+        Assert.assertEquals(5.0, locacao.getValor(), 0.01); //forma correta
+
+        //Verifique que: "CoreMathers"
+        Assert.assertThat(locacao.getValor(), is(5.0));
+        Assert.assertThat(locacao.getValor(), is(equalTo(5.0)));
+        Assert.assertThat(locacao.getValor(), is(CoreMatchers.not(6.0)));
+        //Assert.assertThat(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()), is(true));
+        //Assert.assertThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)), is(true));
+
+
     }
 }
