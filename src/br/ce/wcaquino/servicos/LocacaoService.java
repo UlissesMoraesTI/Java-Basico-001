@@ -6,7 +6,9 @@ import br.ce.wcaquino.entidades.Usuario;
 import br.ce.wcaquino.utils.DataUtils;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ErrorCollector;
 
 import java.util.Date;
 
@@ -33,6 +35,9 @@ public class LocacaoService {
         return locacao;
     }
 
+    @Rule
+    public ErrorCollector error = new ErrorCollector();
+
     @Test
     public void teste() {
         //cenario
@@ -54,6 +59,7 @@ public class LocacaoService {
         //Assert.assertThat(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()), is(true));
         //Assert.assertThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)), is(true));
 
-
+        //Uso: @Rule
+        error.checkThat(locacao.getValor(), is(equalTo(5.0)));
     }
 }
