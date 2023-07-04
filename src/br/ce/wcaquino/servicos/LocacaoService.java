@@ -17,7 +17,13 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class LocacaoService {
 
-    public Locacao alugarFilme(Usuario usuario, Filme filme) {
+    public Locacao alugarFilme(Usuario usuario, Filme filme) throws Exception {
+
+        if(filme.getEstoque() == 0){
+            throw new Exception("Filme sem estoque");
+
+        }
+
         Locacao locacao = new Locacao();
         locacao.setFilme(filme);
         locacao.setUsuario(usuario);
@@ -46,7 +52,12 @@ public class LocacaoService {
         Filme filme = new Filme("Filme 1", 2, 5.0);
 
         //ação
-        Locacao locacao = service.alugarFilme(usuario, filme);
+        Locacao locacao = null;
+        try {
+            locacao = service.alugarFilme(usuario, filme);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         //verificação
         Assert.assertTrue(locacao.getValor() == 5.0); // forma inicial
